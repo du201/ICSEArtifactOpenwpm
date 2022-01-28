@@ -1,0 +1,2218 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    LTRI
+    NAMEDGROUP
+    RTRI
+
+Grammar
+
+Rule 0     S' -> regex
+Rule 1     regex -> outer_term
+Rule 2     regex -> outer_term BAR regex
+Rule 3     outer_term -> term
+Rule 4     outer_term -> CARET term
+Rule 5     outer_term -> term DOLLAR
+Rule 6     outer_term -> CARET term DOLLAR
+Rule 7     term -> factor
+Rule 8     term -> factor term
+Rule 9     factor -> NON_META_CHAR
+Rule 10    factor -> DIGIT
+Rule 11    factor -> DASH
+Rule 12    factor -> COMMA
+Rule 13    factor -> DOT
+Rule 14    factor -> factor STAR
+Rule 15    factor -> factor PLUS
+Rule 16    factor -> factor QUESTION
+Rule 17    factor -> LPAREN regex RPAREN
+Rule 18    string -> NON_META_CHAR
+Rule 19    string -> NON_META_CHAR string
+Rule 20    factor -> BACKSLASH DIGIT
+Rule 21    factor -> set
+Rule 22    factor -> BACKSLASH DOT
+Rule 23    factor -> BACKSLASH STAR
+Rule 24    factor -> BACKSLASH PLUS
+Rule 25    factor -> BACKSLASH QUESTION
+Rule 26    factor -> BACKSLASH BAR
+Rule 27    factor -> BACKSLASH LPAREN
+Rule 28    factor -> BACKSLASH RPAREN
+Rule 29    factor -> BACKSLASH LBRACKET
+Rule 30    factor -> BACKSLASH RBRACKET
+Rule 31    factor -> BACKSLASH CARET
+Rule 32    factor -> BACKSLASH LBRACE
+Rule 33    factor -> BACKSLASH RBRACE
+Rule 34    factor -> BACKSLASH DASH
+Rule 35    factor -> BACKSLASH COMMA
+Rule 36    factor -> BACKSLASH BACKSLASH
+Rule 37    factor -> BACKSLASH NON_META_CHAR
+Rule 38    factor -> factor LBRACE number RBRACE
+Rule 39    factor -> factor LBRACE number COMMA RBRACE
+Rule 40    factor -> factor LBRACE number COMMA number RBRACE
+Rule 41    number -> DIGIT
+Rule 42    number -> DIGIT number
+Rule 43    set -> LDASHBRACKET set_items_parent RBRACKET
+Rule 44    set -> LBRACKET set_items_parent RDASHBRACKET
+Rule 45    set -> LBRACKET set_items_parent RBRACKET
+Rule 46    set_items_parent -> set_items
+Rule 47    set -> LBRACKET CARET set_items_parent RBRACKET
+Rule 48    set_items -> set_item
+Rule 49    set_items -> set_item set_items
+Rule 50    set_item -> set_non_meta_char
+Rule 51    set_item -> set_non_meta_char DASH set_non_meta_char
+Rule 52    set_item -> BACKSLASH RBRACKET
+Rule 53    set_item -> BACKSLASH CARET
+Rule 54    set_item -> BACKSLASH DASH
+Rule 55    set_item -> BACKSLASH BACKSLASH
+Rule 56    set_item -> BACKSLASH set_non_meta_char
+Rule 57    set_non_meta_char -> NON_META_CHAR
+Rule 58    set_non_meta_char -> LBRACKET
+Rule 59    set_non_meta_char -> DIGIT
+Rule 60    set_non_meta_char -> DOT
+Rule 61    set_non_meta_char -> STAR
+Rule 62    set_non_meta_char -> PLUS
+Rule 63    set_non_meta_char -> QUESTION
+Rule 64    set_non_meta_char -> BAR
+Rule 65    set_non_meta_char -> LPAREN
+Rule 66    set_non_meta_char -> RPAREN
+Rule 67    set_non_meta_char -> LBRACE
+Rule 68    set_non_meta_char -> RBRACE
+Rule 69    set_non_meta_char -> COMMA
+Rule 70    set_non_meta_char -> EQUAL
+
+Terminals, with rules where they appear
+
+BACKSLASH            : 20 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 36 37 52 53 54 55 55 56
+BAR                  : 2 26 64
+CARET                : 4 6 31 47 53
+COMMA                : 12 35 39 40 69
+DASH                 : 11 34 51 54
+DIGIT                : 10 20 41 42 59
+DOLLAR               : 5 6
+DOT                  : 13 22 60
+EQUAL                : 70
+LBRACE               : 32 38 39 40 67
+LBRACKET             : 29 44 45 47 58
+LDASHBRACKET         : 43
+LPAREN               : 17 27 65
+LTRI                 : 
+NAMEDGROUP           : 
+NON_META_CHAR        : 9 18 19 37 57
+PLUS                 : 15 24 62
+QUESTION             : 16 25 63
+RBRACE               : 33 38 39 40 68
+RBRACKET             : 30 43 45 47 52
+RDASHBRACKET         : 44
+RPAREN               : 17 28 66
+RTRI                 : 
+STAR                 : 14 23 61
+error                : 
+
+Nonterminals, with rules where they appear
+
+factor               : 7 8 14 15 16 38 39 40
+number               : 38 39 40 40 42
+outer_term           : 1 2
+regex                : 2 17 0
+set                  : 21
+set_item             : 48 49
+set_items            : 46 49
+set_items_parent     : 43 44 45 47
+set_non_meta_char    : 50 51 51 56
+string               : 19
+term                 : 3 4 5 6 8
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . regex
+    (1) regex -> . outer_term
+    (2) regex -> . outer_term BAR regex
+    (3) outer_term -> . term
+    (4) outer_term -> . CARET term
+    (5) outer_term -> . term DOLLAR
+    (6) outer_term -> . CARET term DOLLAR
+    (7) term -> . factor
+    (8) term -> . factor term
+    (9) factor -> . NON_META_CHAR
+    (10) factor -> . DIGIT
+    (11) factor -> . DASH
+    (12) factor -> . COMMA
+    (13) factor -> . DOT
+    (14) factor -> . factor STAR
+    (15) factor -> . factor PLUS
+    (16) factor -> . factor QUESTION
+    (17) factor -> . LPAREN regex RPAREN
+    (20) factor -> . BACKSLASH DIGIT
+    (21) factor -> . set
+    (22) factor -> . BACKSLASH DOT
+    (23) factor -> . BACKSLASH STAR
+    (24) factor -> . BACKSLASH PLUS
+    (25) factor -> . BACKSLASH QUESTION
+    (26) factor -> . BACKSLASH BAR
+    (27) factor -> . BACKSLASH LPAREN
+    (28) factor -> . BACKSLASH RPAREN
+    (29) factor -> . BACKSLASH LBRACKET
+    (30) factor -> . BACKSLASH RBRACKET
+    (31) factor -> . BACKSLASH CARET
+    (32) factor -> . BACKSLASH LBRACE
+    (33) factor -> . BACKSLASH RBRACE
+    (34) factor -> . BACKSLASH DASH
+    (35) factor -> . BACKSLASH COMMA
+    (36) factor -> . BACKSLASH BACKSLASH
+    (37) factor -> . BACKSLASH NON_META_CHAR
+    (38) factor -> . factor LBRACE number RBRACE
+    (39) factor -> . factor LBRACE number COMMA RBRACE
+    (40) factor -> . factor LBRACE number COMMA number RBRACE
+    (43) set -> . LDASHBRACKET set_items_parent RBRACKET
+    (44) set -> . LBRACKET set_items_parent RDASHBRACKET
+    (45) set -> . LBRACKET set_items_parent RBRACKET
+    (47) set -> . LBRACKET CARET set_items_parent RBRACKET
+
+    CARET           shift and go to state 4
+    NON_META_CHAR   shift and go to state 6
+    DIGIT           shift and go to state 7
+    DASH            shift and go to state 8
+    COMMA           shift and go to state 9
+    DOT             shift and go to state 10
+    LPAREN          shift and go to state 11
+    BACKSLASH       shift and go to state 12
+    LDASHBRACKET    shift and go to state 15
+    LBRACKET        shift and go to state 14
+
+    regex                          shift and go to state 1
+    outer_term                     shift and go to state 2
+    term                           shift and go to state 3
+    factor                         shift and go to state 5
+    set                            shift and go to state 13
+
+state 1
+
+    (0) S' -> regex .
+
+
+
+state 2
+
+    (1) regex -> outer_term .
+    (2) regex -> outer_term . BAR regex
+
+    $end            reduce using rule 1 (regex -> outer_term .)
+    RPAREN          reduce using rule 1 (regex -> outer_term .)
+    BAR             shift and go to state 16
+
+
+state 3
+
+    (3) outer_term -> term .
+    (5) outer_term -> term . DOLLAR
+
+    BAR             reduce using rule 3 (outer_term -> term .)
+    $end            reduce using rule 3 (outer_term -> term .)
+    RPAREN          reduce using rule 3 (outer_term -> term .)
+    DOLLAR          shift and go to state 17
+
+
+state 4
+
+    (4) outer_term -> CARET . term
+    (6) outer_term -> CARET . term DOLLAR
+    (7) term -> . factor
+    (8) term -> . factor term
+    (9) factor -> . NON_META_CHAR
+    (10) factor -> . DIGIT
+    (11) factor -> . DASH
+    (12) factor -> . COMMA
+    (13) factor -> . DOT
+    (14) factor -> . factor STAR
+    (15) factor -> . factor PLUS
+    (16) factor -> . factor QUESTION
+    (17) factor -> . LPAREN regex RPAREN
+    (20) factor -> . BACKSLASH DIGIT
+    (21) factor -> . set
+    (22) factor -> . BACKSLASH DOT
+    (23) factor -> . BACKSLASH STAR
+    (24) factor -> . BACKSLASH PLUS
+    (25) factor -> . BACKSLASH QUESTION
+    (26) factor -> . BACKSLASH BAR
+    (27) factor -> . BACKSLASH LPAREN
+    (28) factor -> . BACKSLASH RPAREN
+    (29) factor -> . BACKSLASH LBRACKET
+    (30) factor -> . BACKSLASH RBRACKET
+    (31) factor -> . BACKSLASH CARET
+    (32) factor -> . BACKSLASH LBRACE
+    (33) factor -> . BACKSLASH RBRACE
+    (34) factor -> . BACKSLASH DASH
+    (35) factor -> . BACKSLASH COMMA
+    (36) factor -> . BACKSLASH BACKSLASH
+    (37) factor -> . BACKSLASH NON_META_CHAR
+    (38) factor -> . factor LBRACE number RBRACE
+    (39) factor -> . factor LBRACE number COMMA RBRACE
+    (40) factor -> . factor LBRACE number COMMA number RBRACE
+    (43) set -> . LDASHBRACKET set_items_parent RBRACKET
+    (44) set -> . LBRACKET set_items_parent RDASHBRACKET
+    (45) set -> . LBRACKET set_items_parent RBRACKET
+    (47) set -> . LBRACKET CARET set_items_parent RBRACKET
+
+    NON_META_CHAR   shift and go to state 6
+    DIGIT           shift and go to state 7
+    DASH            shift and go to state 8
+    COMMA           shift and go to state 9
+    DOT             shift and go to state 10
+    LPAREN          shift and go to state 11
+    BACKSLASH       shift and go to state 12
+    LDASHBRACKET    shift and go to state 15
+    LBRACKET        shift and go to state 14
+
+    term                           shift and go to state 18
+    factor                         shift and go to state 5
+    set                            shift and go to state 13
+
+state 5
+
+    (7) term -> factor .
+    (8) term -> factor . term
+    (14) factor -> factor . STAR
+    (15) factor -> factor . PLUS
+    (16) factor -> factor . QUESTION
+    (38) factor -> factor . LBRACE number RBRACE
+    (39) factor -> factor . LBRACE number COMMA RBRACE
+    (40) factor -> factor . LBRACE number COMMA number RBRACE
+    (7) term -> . factor
+    (8) term -> . factor term
+    (9) factor -> . NON_META_CHAR
+    (10) factor -> . DIGIT
+    (11) factor -> . DASH
+    (12) factor -> . COMMA
+    (13) factor -> . DOT
+    (14) factor -> . factor STAR
+    (15) factor -> . factor PLUS
+    (16) factor -> . factor QUESTION
+    (17) factor -> . LPAREN regex RPAREN
+    (20) factor -> . BACKSLASH DIGIT
+    (21) factor -> . set
+    (22) factor -> . BACKSLASH DOT
+    (23) factor -> . BACKSLASH STAR
+    (24) factor -> . BACKSLASH PLUS
+    (25) factor -> . BACKSLASH QUESTION
+    (26) factor -> . BACKSLASH BAR
+    (27) factor -> . BACKSLASH LPAREN
+    (28) factor -> . BACKSLASH RPAREN
+    (29) factor -> . BACKSLASH LBRACKET
+    (30) factor -> . BACKSLASH RBRACKET
+    (31) factor -> . BACKSLASH CARET
+    (32) factor -> . BACKSLASH LBRACE
+    (33) factor -> . BACKSLASH RBRACE
+    (34) factor -> . BACKSLASH DASH
+    (35) factor -> . BACKSLASH COMMA
+    (36) factor -> . BACKSLASH BACKSLASH
+    (37) factor -> . BACKSLASH NON_META_CHAR
+    (38) factor -> . factor LBRACE number RBRACE
+    (39) factor -> . factor LBRACE number COMMA RBRACE
+    (40) factor -> . factor LBRACE number COMMA number RBRACE
+    (43) set -> . LDASHBRACKET set_items_parent RBRACKET
+    (44) set -> . LBRACKET set_items_parent RDASHBRACKET
+    (45) set -> . LBRACKET set_items_parent RBRACKET
+    (47) set -> . LBRACKET CARET set_items_parent RBRACKET
+
+    DOLLAR          reduce using rule 7 (term -> factor .)
+    BAR             reduce using rule 7 (term -> factor .)
+    $end            reduce using rule 7 (term -> factor .)
+    RPAREN          reduce using rule 7 (term -> factor .)
+    STAR            shift and go to state 20
+    PLUS            shift and go to state 21
+    QUESTION        shift and go to state 22
+    LBRACE          shift and go to state 23
+    NON_META_CHAR   shift and go to state 6
+    DIGIT           shift and go to state 7
+    DASH            shift and go to state 8
+    COMMA           shift and go to state 9
+    DOT             shift and go to state 10
+    LPAREN          shift and go to state 11
+    BACKSLASH       shift and go to state 12
+    LDASHBRACKET    shift and go to state 15
+    LBRACKET        shift and go to state 14
+
+    factor                         shift and go to state 5
+    term                           shift and go to state 19
+    set                            shift and go to state 13
+
+state 6
+
+    (9) factor -> NON_META_CHAR .
+
+    STAR            reduce using rule 9 (factor -> NON_META_CHAR .)
+    PLUS            reduce using rule 9 (factor -> NON_META_CHAR .)
+    QUESTION        reduce using rule 9 (factor -> NON_META_CHAR .)
+    LBRACE          reduce using rule 9 (factor -> NON_META_CHAR .)
+    NON_META_CHAR   reduce using rule 9 (factor -> NON_META_CHAR .)
+    DIGIT           reduce using rule 9 (factor -> NON_META_CHAR .)
+    DASH            reduce using rule 9 (factor -> NON_META_CHAR .)
+    COMMA           reduce using rule 9 (factor -> NON_META_CHAR .)
+    DOT             reduce using rule 9 (factor -> NON_META_CHAR .)
+    LPAREN          reduce using rule 9 (factor -> NON_META_CHAR .)
+    BACKSLASH       reduce using rule 9 (factor -> NON_META_CHAR .)
+    LDASHBRACKET    reduce using rule 9 (factor -> NON_META_CHAR .)
+    LBRACKET        reduce using rule 9 (factor -> NON_META_CHAR .)
+    DOLLAR          reduce using rule 9 (factor -> NON_META_CHAR .)
+    BAR             reduce using rule 9 (factor -> NON_META_CHAR .)
+    $end            reduce using rule 9 (factor -> NON_META_CHAR .)
+    RPAREN          reduce using rule 9 (factor -> NON_META_CHAR .)
+
+
+state 7
+
+    (10) factor -> DIGIT .
+
+    STAR            reduce using rule 10 (factor -> DIGIT .)
+    PLUS            reduce using rule 10 (factor -> DIGIT .)
+    QUESTION        reduce using rule 10 (factor -> DIGIT .)
+    LBRACE          reduce using rule 10 (factor -> DIGIT .)
+    NON_META_CHAR   reduce using rule 10 (factor -> DIGIT .)
+    DIGIT           reduce using rule 10 (factor -> DIGIT .)
+    DASH            reduce using rule 10 (factor -> DIGIT .)
+    COMMA           reduce using rule 10 (factor -> DIGIT .)
+    DOT             reduce using rule 10 (factor -> DIGIT .)
+    LPAREN          reduce using rule 10 (factor -> DIGIT .)
+    BACKSLASH       reduce using rule 10 (factor -> DIGIT .)
+    LDASHBRACKET    reduce using rule 10 (factor -> DIGIT .)
+    LBRACKET        reduce using rule 10 (factor -> DIGIT .)
+    DOLLAR          reduce using rule 10 (factor -> DIGIT .)
+    BAR             reduce using rule 10 (factor -> DIGIT .)
+    $end            reduce using rule 10 (factor -> DIGIT .)
+    RPAREN          reduce using rule 10 (factor -> DIGIT .)
+
+
+state 8
+
+    (11) factor -> DASH .
+
+    STAR            reduce using rule 11 (factor -> DASH .)
+    PLUS            reduce using rule 11 (factor -> DASH .)
+    QUESTION        reduce using rule 11 (factor -> DASH .)
+    LBRACE          reduce using rule 11 (factor -> DASH .)
+    NON_META_CHAR   reduce using rule 11 (factor -> DASH .)
+    DIGIT           reduce using rule 11 (factor -> DASH .)
+    DASH            reduce using rule 11 (factor -> DASH .)
+    COMMA           reduce using rule 11 (factor -> DASH .)
+    DOT             reduce using rule 11 (factor -> DASH .)
+    LPAREN          reduce using rule 11 (factor -> DASH .)
+    BACKSLASH       reduce using rule 11 (factor -> DASH .)
+    LDASHBRACKET    reduce using rule 11 (factor -> DASH .)
+    LBRACKET        reduce using rule 11 (factor -> DASH .)
+    DOLLAR          reduce using rule 11 (factor -> DASH .)
+    BAR             reduce using rule 11 (factor -> DASH .)
+    $end            reduce using rule 11 (factor -> DASH .)
+    RPAREN          reduce using rule 11 (factor -> DASH .)
+
+
+state 9
+
+    (12) factor -> COMMA .
+
+    STAR            reduce using rule 12 (factor -> COMMA .)
+    PLUS            reduce using rule 12 (factor -> COMMA .)
+    QUESTION        reduce using rule 12 (factor -> COMMA .)
+    LBRACE          reduce using rule 12 (factor -> COMMA .)
+    NON_META_CHAR   reduce using rule 12 (factor -> COMMA .)
+    DIGIT           reduce using rule 12 (factor -> COMMA .)
+    DASH            reduce using rule 12 (factor -> COMMA .)
+    COMMA           reduce using rule 12 (factor -> COMMA .)
+    DOT             reduce using rule 12 (factor -> COMMA .)
+    LPAREN          reduce using rule 12 (factor -> COMMA .)
+    BACKSLASH       reduce using rule 12 (factor -> COMMA .)
+    LDASHBRACKET    reduce using rule 12 (factor -> COMMA .)
+    LBRACKET        reduce using rule 12 (factor -> COMMA .)
+    DOLLAR          reduce using rule 12 (factor -> COMMA .)
+    BAR             reduce using rule 12 (factor -> COMMA .)
+    $end            reduce using rule 12 (factor -> COMMA .)
+    RPAREN          reduce using rule 12 (factor -> COMMA .)
+
+
+state 10
+
+    (13) factor -> DOT .
+
+    STAR            reduce using rule 13 (factor -> DOT .)
+    PLUS            reduce using rule 13 (factor -> DOT .)
+    QUESTION        reduce using rule 13 (factor -> DOT .)
+    LBRACE          reduce using rule 13 (factor -> DOT .)
+    NON_META_CHAR   reduce using rule 13 (factor -> DOT .)
+    DIGIT           reduce using rule 13 (factor -> DOT .)
+    DASH            reduce using rule 13 (factor -> DOT .)
+    COMMA           reduce using rule 13 (factor -> DOT .)
+    DOT             reduce using rule 13 (factor -> DOT .)
+    LPAREN          reduce using rule 13 (factor -> DOT .)
+    BACKSLASH       reduce using rule 13 (factor -> DOT .)
+    LDASHBRACKET    reduce using rule 13 (factor -> DOT .)
+    LBRACKET        reduce using rule 13 (factor -> DOT .)
+    DOLLAR          reduce using rule 13 (factor -> DOT .)
+    BAR             reduce using rule 13 (factor -> DOT .)
+    $end            reduce using rule 13 (factor -> DOT .)
+    RPAREN          reduce using rule 13 (factor -> DOT .)
+
+
+state 11
+
+    (17) factor -> LPAREN . regex RPAREN
+    (1) regex -> . outer_term
+    (2) regex -> . outer_term BAR regex
+    (3) outer_term -> . term
+    (4) outer_term -> . CARET term
+    (5) outer_term -> . term DOLLAR
+    (6) outer_term -> . CARET term DOLLAR
+    (7) term -> . factor
+    (8) term -> . factor term
+    (9) factor -> . NON_META_CHAR
+    (10) factor -> . DIGIT
+    (11) factor -> . DASH
+    (12) factor -> . COMMA
+    (13) factor -> . DOT
+    (14) factor -> . factor STAR
+    (15) factor -> . factor PLUS
+    (16) factor -> . factor QUESTION
+    (17) factor -> . LPAREN regex RPAREN
+    (20) factor -> . BACKSLASH DIGIT
+    (21) factor -> . set
+    (22) factor -> . BACKSLASH DOT
+    (23) factor -> . BACKSLASH STAR
+    (24) factor -> . BACKSLASH PLUS
+    (25) factor -> . BACKSLASH QUESTION
+    (26) factor -> . BACKSLASH BAR
+    (27) factor -> . BACKSLASH LPAREN
+    (28) factor -> . BACKSLASH RPAREN
+    (29) factor -> . BACKSLASH LBRACKET
+    (30) factor -> . BACKSLASH RBRACKET
+    (31) factor -> . BACKSLASH CARET
+    (32) factor -> . BACKSLASH LBRACE
+    (33) factor -> . BACKSLASH RBRACE
+    (34) factor -> . BACKSLASH DASH
+    (35) factor -> . BACKSLASH COMMA
+    (36) factor -> . BACKSLASH BACKSLASH
+    (37) factor -> . BACKSLASH NON_META_CHAR
+    (38) factor -> . factor LBRACE number RBRACE
+    (39) factor -> . factor LBRACE number COMMA RBRACE
+    (40) factor -> . factor LBRACE number COMMA number RBRACE
+    (43) set -> . LDASHBRACKET set_items_parent RBRACKET
+    (44) set -> . LBRACKET set_items_parent RDASHBRACKET
+    (45) set -> . LBRACKET set_items_parent RBRACKET
+    (47) set -> . LBRACKET CARET set_items_parent RBRACKET
+
+    CARET           shift and go to state 4
+    NON_META_CHAR   shift and go to state 6
+    DIGIT           shift and go to state 7
+    DASH            shift and go to state 8
+    COMMA           shift and go to state 9
+    DOT             shift and go to state 10
+    LPAREN          shift and go to state 11
+    BACKSLASH       shift and go to state 12
+    LDASHBRACKET    shift and go to state 15
+    LBRACKET        shift and go to state 14
+
+    regex                          shift and go to state 24
+    outer_term                     shift and go to state 2
+    term                           shift and go to state 3
+    factor                         shift and go to state 5
+    set                            shift and go to state 13
+
+state 12
+
+    (20) factor -> BACKSLASH . DIGIT
+    (22) factor -> BACKSLASH . DOT
+    (23) factor -> BACKSLASH . STAR
+    (24) factor -> BACKSLASH . PLUS
+    (25) factor -> BACKSLASH . QUESTION
+    (26) factor -> BACKSLASH . BAR
+    (27) factor -> BACKSLASH . LPAREN
+    (28) factor -> BACKSLASH . RPAREN
+    (29) factor -> BACKSLASH . LBRACKET
+    (30) factor -> BACKSLASH . RBRACKET
+    (31) factor -> BACKSLASH . CARET
+    (32) factor -> BACKSLASH . LBRACE
+    (33) factor -> BACKSLASH . RBRACE
+    (34) factor -> BACKSLASH . DASH
+    (35) factor -> BACKSLASH . COMMA
+    (36) factor -> BACKSLASH . BACKSLASH
+    (37) factor -> BACKSLASH . NON_META_CHAR
+
+    DIGIT           shift and go to state 26
+    DOT             shift and go to state 27
+    STAR            shift and go to state 28
+    PLUS            shift and go to state 29
+    QUESTION        shift and go to state 30
+    BAR             shift and go to state 31
+    LPAREN          shift and go to state 32
+    RPAREN          shift and go to state 33
+    LBRACKET        shift and go to state 34
+    RBRACKET        shift and go to state 35
+    CARET           shift and go to state 36
+    LBRACE          shift and go to state 37
+    RBRACE          shift and go to state 38
+    DASH            shift and go to state 39
+    COMMA           shift and go to state 40
+    BACKSLASH       shift and go to state 25
+    NON_META_CHAR   shift and go to state 41
+
+
+state 13
+
+    (21) factor -> set .
+
+    STAR            reduce using rule 21 (factor -> set .)
+    PLUS            reduce using rule 21 (factor -> set .)
+    QUESTION        reduce using rule 21 (factor -> set .)
+    LBRACE          reduce using rule 21 (factor -> set .)
+    NON_META_CHAR   reduce using rule 21 (factor -> set .)
+    DIGIT           reduce using rule 21 (factor -> set .)
+    DASH            reduce using rule 21 (factor -> set .)
+    COMMA           reduce using rule 21 (factor -> set .)
+    DOT             reduce using rule 21 (factor -> set .)
+    LPAREN          reduce using rule 21 (factor -> set .)
+    BACKSLASH       reduce using rule 21 (factor -> set .)
+    LDASHBRACKET    reduce using rule 21 (factor -> set .)
+    LBRACKET        reduce using rule 21 (factor -> set .)
+    DOLLAR          reduce using rule 21 (factor -> set .)
+    BAR             reduce using rule 21 (factor -> set .)
+    $end            reduce using rule 21 (factor -> set .)
+    RPAREN          reduce using rule 21 (factor -> set .)
+
+
+state 14
+
+    (44) set -> LBRACKET . set_items_parent RDASHBRACKET
+    (45) set -> LBRACKET . set_items_parent RBRACKET
+    (47) set -> LBRACKET . CARET set_items_parent RBRACKET
+    (46) set_items_parent -> . set_items
+    (48) set_items -> . set_item
+    (49) set_items -> . set_item set_items
+    (50) set_item -> . set_non_meta_char
+    (51) set_item -> . set_non_meta_char DASH set_non_meta_char
+    (52) set_item -> . BACKSLASH RBRACKET
+    (53) set_item -> . BACKSLASH CARET
+    (54) set_item -> . BACKSLASH DASH
+    (55) set_item -> . BACKSLASH BACKSLASH
+    (56) set_item -> . BACKSLASH set_non_meta_char
+    (57) set_non_meta_char -> . NON_META_CHAR
+    (58) set_non_meta_char -> . LBRACKET
+    (59) set_non_meta_char -> . DIGIT
+    (60) set_non_meta_char -> . DOT
+    (61) set_non_meta_char -> . STAR
+    (62) set_non_meta_char -> . PLUS
+    (63) set_non_meta_char -> . QUESTION
+    (64) set_non_meta_char -> . BAR
+    (65) set_non_meta_char -> . LPAREN
+    (66) set_non_meta_char -> . RPAREN
+    (67) set_non_meta_char -> . LBRACE
+    (68) set_non_meta_char -> . RBRACE
+    (69) set_non_meta_char -> . COMMA
+    (70) set_non_meta_char -> . EQUAL
+
+    CARET           shift and go to state 44
+    BACKSLASH       shift and go to state 48
+    NON_META_CHAR   shift and go to state 49
+    LBRACKET        shift and go to state 42
+    DIGIT           shift and go to state 50
+    DOT             shift and go to state 51
+    STAR            shift and go to state 52
+    PLUS            shift and go to state 53
+    QUESTION        shift and go to state 54
+    BAR             shift and go to state 55
+    LPAREN          shift and go to state 56
+    RPAREN          shift and go to state 57
+    LBRACE          shift and go to state 58
+    RBRACE          shift and go to state 59
+    COMMA           shift and go to state 60
+    EQUAL           shift and go to state 61
+
+    set_items_parent               shift and go to state 43
+    set_items                      shift and go to state 45
+    set_item                       shift and go to state 46
+    set_non_meta_char              shift and go to state 47
+
+state 15
+
+    (43) set -> LDASHBRACKET . set_items_parent RBRACKET
+    (46) set_items_parent -> . set_items
+    (48) set_items -> . set_item
+    (49) set_items -> . set_item set_items
+    (50) set_item -> . set_non_meta_char
+    (51) set_item -> . set_non_meta_char DASH set_non_meta_char
+    (52) set_item -> . BACKSLASH RBRACKET
+    (53) set_item -> . BACKSLASH CARET
+    (54) set_item -> . BACKSLASH DASH
+    (55) set_item -> . BACKSLASH BACKSLASH
+    (56) set_item -> . BACKSLASH set_non_meta_char
+    (57) set_non_meta_char -> . NON_META_CHAR
+    (58) set_non_meta_char -> . LBRACKET
+    (59) set_non_meta_char -> . DIGIT
+    (60) set_non_meta_char -> . DOT
+    (61) set_non_meta_char -> . STAR
+    (62) set_non_meta_char -> . PLUS
+    (63) set_non_meta_char -> . QUESTION
+    (64) set_non_meta_char -> . BAR
+    (65) set_non_meta_char -> . LPAREN
+    (66) set_non_meta_char -> . RPAREN
+    (67) set_non_meta_char -> . LBRACE
+    (68) set_non_meta_char -> . RBRACE
+    (69) set_non_meta_char -> . COMMA
+    (70) set_non_meta_char -> . EQUAL
+
+    BACKSLASH       shift and go to state 48
+    NON_META_CHAR   shift and go to state 49
+    LBRACKET        shift and go to state 42
+    DIGIT           shift and go to state 50
+    DOT             shift and go to state 51
+    STAR            shift and go to state 52
+    PLUS            shift and go to state 53
+    QUESTION        shift and go to state 54
+    BAR             shift and go to state 55
+    LPAREN          shift and go to state 56
+    RPAREN          shift and go to state 57
+    LBRACE          shift and go to state 58
+    RBRACE          shift and go to state 59
+    COMMA           shift and go to state 60
+    EQUAL           shift and go to state 61
+
+    set_items_parent               shift and go to state 62
+    set_items                      shift and go to state 45
+    set_item                       shift and go to state 46
+    set_non_meta_char              shift and go to state 47
+
+state 16
+
+    (2) regex -> outer_term BAR . regex
+    (1) regex -> . outer_term
+    (2) regex -> . outer_term BAR regex
+    (3) outer_term -> . term
+    (4) outer_term -> . CARET term
+    (5) outer_term -> . term DOLLAR
+    (6) outer_term -> . CARET term DOLLAR
+    (7) term -> . factor
+    (8) term -> . factor term
+    (9) factor -> . NON_META_CHAR
+    (10) factor -> . DIGIT
+    (11) factor -> . DASH
+    (12) factor -> . COMMA
+    (13) factor -> . DOT
+    (14) factor -> . factor STAR
+    (15) factor -> . factor PLUS
+    (16) factor -> . factor QUESTION
+    (17) factor -> . LPAREN regex RPAREN
+    (20) factor -> . BACKSLASH DIGIT
+    (21) factor -> . set
+    (22) factor -> . BACKSLASH DOT
+    (23) factor -> . BACKSLASH STAR
+    (24) factor -> . BACKSLASH PLUS
+    (25) factor -> . BACKSLASH QUESTION
+    (26) factor -> . BACKSLASH BAR
+    (27) factor -> . BACKSLASH LPAREN
+    (28) factor -> . BACKSLASH RPAREN
+    (29) factor -> . BACKSLASH LBRACKET
+    (30) factor -> . BACKSLASH RBRACKET
+    (31) factor -> . BACKSLASH CARET
+    (32) factor -> . BACKSLASH LBRACE
+    (33) factor -> . BACKSLASH RBRACE
+    (34) factor -> . BACKSLASH DASH
+    (35) factor -> . BACKSLASH COMMA
+    (36) factor -> . BACKSLASH BACKSLASH
+    (37) factor -> . BACKSLASH NON_META_CHAR
+    (38) factor -> . factor LBRACE number RBRACE
+    (39) factor -> . factor LBRACE number COMMA RBRACE
+    (40) factor -> . factor LBRACE number COMMA number RBRACE
+    (43) set -> . LDASHBRACKET set_items_parent RBRACKET
+    (44) set -> . LBRACKET set_items_parent RDASHBRACKET
+    (45) set -> . LBRACKET set_items_parent RBRACKET
+    (47) set -> . LBRACKET CARET set_items_parent RBRACKET
+
+    CARET           shift and go to state 4
+    NON_META_CHAR   shift and go to state 6
+    DIGIT           shift and go to state 7
+    DASH            shift and go to state 8
+    COMMA           shift and go to state 9
+    DOT             shift and go to state 10
+    LPAREN          shift and go to state 11
+    BACKSLASH       shift and go to state 12
+    LDASHBRACKET    shift and go to state 15
+    LBRACKET        shift and go to state 14
+
+    outer_term                     shift and go to state 2
+    regex                          shift and go to state 63
+    term                           shift and go to state 3
+    factor                         shift and go to state 5
+    set                            shift and go to state 13
+
+state 17
+
+    (5) outer_term -> term DOLLAR .
+
+    BAR             reduce using rule 5 (outer_term -> term DOLLAR .)
+    $end            reduce using rule 5 (outer_term -> term DOLLAR .)
+    RPAREN          reduce using rule 5 (outer_term -> term DOLLAR .)
+
+
+state 18
+
+    (4) outer_term -> CARET term .
+    (6) outer_term -> CARET term . DOLLAR
+
+    BAR             reduce using rule 4 (outer_term -> CARET term .)
+    $end            reduce using rule 4 (outer_term -> CARET term .)
+    RPAREN          reduce using rule 4 (outer_term -> CARET term .)
+    DOLLAR          shift and go to state 64
+
+
+state 19
+
+    (8) term -> factor term .
+
+    DOLLAR          reduce using rule 8 (term -> factor term .)
+    BAR             reduce using rule 8 (term -> factor term .)
+    $end            reduce using rule 8 (term -> factor term .)
+    RPAREN          reduce using rule 8 (term -> factor term .)
+
+
+state 20
+
+    (14) factor -> factor STAR .
+
+    STAR            reduce using rule 14 (factor -> factor STAR .)
+    PLUS            reduce using rule 14 (factor -> factor STAR .)
+    QUESTION        reduce using rule 14 (factor -> factor STAR .)
+    LBRACE          reduce using rule 14 (factor -> factor STAR .)
+    NON_META_CHAR   reduce using rule 14 (factor -> factor STAR .)
+    DIGIT           reduce using rule 14 (factor -> factor STAR .)
+    DASH            reduce using rule 14 (factor -> factor STAR .)
+    COMMA           reduce using rule 14 (factor -> factor STAR .)
+    DOT             reduce using rule 14 (factor -> factor STAR .)
+    LPAREN          reduce using rule 14 (factor -> factor STAR .)
+    BACKSLASH       reduce using rule 14 (factor -> factor STAR .)
+    LDASHBRACKET    reduce using rule 14 (factor -> factor STAR .)
+    LBRACKET        reduce using rule 14 (factor -> factor STAR .)
+    DOLLAR          reduce using rule 14 (factor -> factor STAR .)
+    BAR             reduce using rule 14 (factor -> factor STAR .)
+    $end            reduce using rule 14 (factor -> factor STAR .)
+    RPAREN          reduce using rule 14 (factor -> factor STAR .)
+
+
+state 21
+
+    (15) factor -> factor PLUS .
+
+    STAR            reduce using rule 15 (factor -> factor PLUS .)
+    PLUS            reduce using rule 15 (factor -> factor PLUS .)
+    QUESTION        reduce using rule 15 (factor -> factor PLUS .)
+    LBRACE          reduce using rule 15 (factor -> factor PLUS .)
+    NON_META_CHAR   reduce using rule 15 (factor -> factor PLUS .)
+    DIGIT           reduce using rule 15 (factor -> factor PLUS .)
+    DASH            reduce using rule 15 (factor -> factor PLUS .)
+    COMMA           reduce using rule 15 (factor -> factor PLUS .)
+    DOT             reduce using rule 15 (factor -> factor PLUS .)
+    LPAREN          reduce using rule 15 (factor -> factor PLUS .)
+    BACKSLASH       reduce using rule 15 (factor -> factor PLUS .)
+    LDASHBRACKET    reduce using rule 15 (factor -> factor PLUS .)
+    LBRACKET        reduce using rule 15 (factor -> factor PLUS .)
+    DOLLAR          reduce using rule 15 (factor -> factor PLUS .)
+    BAR             reduce using rule 15 (factor -> factor PLUS .)
+    $end            reduce using rule 15 (factor -> factor PLUS .)
+    RPAREN          reduce using rule 15 (factor -> factor PLUS .)
+
+
+state 22
+
+    (16) factor -> factor QUESTION .
+
+    STAR            reduce using rule 16 (factor -> factor QUESTION .)
+    PLUS            reduce using rule 16 (factor -> factor QUESTION .)
+    QUESTION        reduce using rule 16 (factor -> factor QUESTION .)
+    LBRACE          reduce using rule 16 (factor -> factor QUESTION .)
+    NON_META_CHAR   reduce using rule 16 (factor -> factor QUESTION .)
+    DIGIT           reduce using rule 16 (factor -> factor QUESTION .)
+    DASH            reduce using rule 16 (factor -> factor QUESTION .)
+    COMMA           reduce using rule 16 (factor -> factor QUESTION .)
+    DOT             reduce using rule 16 (factor -> factor QUESTION .)
+    LPAREN          reduce using rule 16 (factor -> factor QUESTION .)
+    BACKSLASH       reduce using rule 16 (factor -> factor QUESTION .)
+    LDASHBRACKET    reduce using rule 16 (factor -> factor QUESTION .)
+    LBRACKET        reduce using rule 16 (factor -> factor QUESTION .)
+    DOLLAR          reduce using rule 16 (factor -> factor QUESTION .)
+    BAR             reduce using rule 16 (factor -> factor QUESTION .)
+    $end            reduce using rule 16 (factor -> factor QUESTION .)
+    RPAREN          reduce using rule 16 (factor -> factor QUESTION .)
+
+
+state 23
+
+    (38) factor -> factor LBRACE . number RBRACE
+    (39) factor -> factor LBRACE . number COMMA RBRACE
+    (40) factor -> factor LBRACE . number COMMA number RBRACE
+    (41) number -> . DIGIT
+    (42) number -> . DIGIT number
+
+    DIGIT           shift and go to state 66
+
+    number                         shift and go to state 65
+
+state 24
+
+    (17) factor -> LPAREN regex . RPAREN
+
+    RPAREN          shift and go to state 67
+
+
+state 25
+
+    (36) factor -> BACKSLASH BACKSLASH .
+
+    STAR            reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    PLUS            reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    QUESTION        reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    LBRACE          reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    NON_META_CHAR   reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    DIGIT           reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    DASH            reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    COMMA           reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    DOT             reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    LPAREN          reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    BACKSLASH       reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    LDASHBRACKET    reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    LBRACKET        reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    DOLLAR          reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    BAR             reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    $end            reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+    RPAREN          reduce using rule 36 (factor -> BACKSLASH BACKSLASH .)
+
+
+state 26
+
+    (20) factor -> BACKSLASH DIGIT .
+
+    STAR            reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    PLUS            reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    QUESTION        reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    LBRACE          reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    NON_META_CHAR   reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    DIGIT           reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    DASH            reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    COMMA           reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    DOT             reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    LPAREN          reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    BACKSLASH       reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    LDASHBRACKET    reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    LBRACKET        reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    DOLLAR          reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    BAR             reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    $end            reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+    RPAREN          reduce using rule 20 (factor -> BACKSLASH DIGIT .)
+
+
+state 27
+
+    (22) factor -> BACKSLASH DOT .
+
+    STAR            reduce using rule 22 (factor -> BACKSLASH DOT .)
+    PLUS            reduce using rule 22 (factor -> BACKSLASH DOT .)
+    QUESTION        reduce using rule 22 (factor -> BACKSLASH DOT .)
+    LBRACE          reduce using rule 22 (factor -> BACKSLASH DOT .)
+    NON_META_CHAR   reduce using rule 22 (factor -> BACKSLASH DOT .)
+    DIGIT           reduce using rule 22 (factor -> BACKSLASH DOT .)
+    DASH            reduce using rule 22 (factor -> BACKSLASH DOT .)
+    COMMA           reduce using rule 22 (factor -> BACKSLASH DOT .)
+    DOT             reduce using rule 22 (factor -> BACKSLASH DOT .)
+    LPAREN          reduce using rule 22 (factor -> BACKSLASH DOT .)
+    BACKSLASH       reduce using rule 22 (factor -> BACKSLASH DOT .)
+    LDASHBRACKET    reduce using rule 22 (factor -> BACKSLASH DOT .)
+    LBRACKET        reduce using rule 22 (factor -> BACKSLASH DOT .)
+    DOLLAR          reduce using rule 22 (factor -> BACKSLASH DOT .)
+    BAR             reduce using rule 22 (factor -> BACKSLASH DOT .)
+    $end            reduce using rule 22 (factor -> BACKSLASH DOT .)
+    RPAREN          reduce using rule 22 (factor -> BACKSLASH DOT .)
+
+
+state 28
+
+    (23) factor -> BACKSLASH STAR .
+
+    STAR            reduce using rule 23 (factor -> BACKSLASH STAR .)
+    PLUS            reduce using rule 23 (factor -> BACKSLASH STAR .)
+    QUESTION        reduce using rule 23 (factor -> BACKSLASH STAR .)
+    LBRACE          reduce using rule 23 (factor -> BACKSLASH STAR .)
+    NON_META_CHAR   reduce using rule 23 (factor -> BACKSLASH STAR .)
+    DIGIT           reduce using rule 23 (factor -> BACKSLASH STAR .)
+    DASH            reduce using rule 23 (factor -> BACKSLASH STAR .)
+    COMMA           reduce using rule 23 (factor -> BACKSLASH STAR .)
+    DOT             reduce using rule 23 (factor -> BACKSLASH STAR .)
+    LPAREN          reduce using rule 23 (factor -> BACKSLASH STAR .)
+    BACKSLASH       reduce using rule 23 (factor -> BACKSLASH STAR .)
+    LDASHBRACKET    reduce using rule 23 (factor -> BACKSLASH STAR .)
+    LBRACKET        reduce using rule 23 (factor -> BACKSLASH STAR .)
+    DOLLAR          reduce using rule 23 (factor -> BACKSLASH STAR .)
+    BAR             reduce using rule 23 (factor -> BACKSLASH STAR .)
+    $end            reduce using rule 23 (factor -> BACKSLASH STAR .)
+    RPAREN          reduce using rule 23 (factor -> BACKSLASH STAR .)
+
+
+state 29
+
+    (24) factor -> BACKSLASH PLUS .
+
+    STAR            reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    PLUS            reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    QUESTION        reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    LBRACE          reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    NON_META_CHAR   reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    DIGIT           reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    DASH            reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    COMMA           reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    DOT             reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    LPAREN          reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    BACKSLASH       reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    LDASHBRACKET    reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    LBRACKET        reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    DOLLAR          reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    BAR             reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    $end            reduce using rule 24 (factor -> BACKSLASH PLUS .)
+    RPAREN          reduce using rule 24 (factor -> BACKSLASH PLUS .)
+
+
+state 30
+
+    (25) factor -> BACKSLASH QUESTION .
+
+    STAR            reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    PLUS            reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    QUESTION        reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    LBRACE          reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    NON_META_CHAR   reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    DIGIT           reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    DASH            reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    COMMA           reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    DOT             reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    LPAREN          reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    BACKSLASH       reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    LDASHBRACKET    reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    LBRACKET        reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    DOLLAR          reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    BAR             reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    $end            reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+    RPAREN          reduce using rule 25 (factor -> BACKSLASH QUESTION .)
+
+
+state 31
+
+    (26) factor -> BACKSLASH BAR .
+
+    STAR            reduce using rule 26 (factor -> BACKSLASH BAR .)
+    PLUS            reduce using rule 26 (factor -> BACKSLASH BAR .)
+    QUESTION        reduce using rule 26 (factor -> BACKSLASH BAR .)
+    LBRACE          reduce using rule 26 (factor -> BACKSLASH BAR .)
+    NON_META_CHAR   reduce using rule 26 (factor -> BACKSLASH BAR .)
+    DIGIT           reduce using rule 26 (factor -> BACKSLASH BAR .)
+    DASH            reduce using rule 26 (factor -> BACKSLASH BAR .)
+    COMMA           reduce using rule 26 (factor -> BACKSLASH BAR .)
+    DOT             reduce using rule 26 (factor -> BACKSLASH BAR .)
+    LPAREN          reduce using rule 26 (factor -> BACKSLASH BAR .)
+    BACKSLASH       reduce using rule 26 (factor -> BACKSLASH BAR .)
+    LDASHBRACKET    reduce using rule 26 (factor -> BACKSLASH BAR .)
+    LBRACKET        reduce using rule 26 (factor -> BACKSLASH BAR .)
+    DOLLAR          reduce using rule 26 (factor -> BACKSLASH BAR .)
+    BAR             reduce using rule 26 (factor -> BACKSLASH BAR .)
+    $end            reduce using rule 26 (factor -> BACKSLASH BAR .)
+    RPAREN          reduce using rule 26 (factor -> BACKSLASH BAR .)
+
+
+state 32
+
+    (27) factor -> BACKSLASH LPAREN .
+
+    STAR            reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    PLUS            reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    QUESTION        reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    LBRACE          reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    NON_META_CHAR   reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    DIGIT           reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    DASH            reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    COMMA           reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    DOT             reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    LPAREN          reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    BACKSLASH       reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    LDASHBRACKET    reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    LBRACKET        reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    DOLLAR          reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    BAR             reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    $end            reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+    RPAREN          reduce using rule 27 (factor -> BACKSLASH LPAREN .)
+
+
+state 33
+
+    (28) factor -> BACKSLASH RPAREN .
+
+    STAR            reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    PLUS            reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    QUESTION        reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    LBRACE          reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    NON_META_CHAR   reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    DIGIT           reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    DASH            reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    COMMA           reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    DOT             reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    LPAREN          reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    BACKSLASH       reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    LDASHBRACKET    reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    LBRACKET        reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    DOLLAR          reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    BAR             reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    $end            reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+    RPAREN          reduce using rule 28 (factor -> BACKSLASH RPAREN .)
+
+
+state 34
+
+    (29) factor -> BACKSLASH LBRACKET .
+
+    STAR            reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    PLUS            reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    QUESTION        reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    LBRACE          reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    NON_META_CHAR   reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    DIGIT           reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    DASH            reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    COMMA           reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    DOT             reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    LPAREN          reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    BACKSLASH       reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    LDASHBRACKET    reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    LBRACKET        reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    DOLLAR          reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    BAR             reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    $end            reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+    RPAREN          reduce using rule 29 (factor -> BACKSLASH LBRACKET .)
+
+
+state 35
+
+    (30) factor -> BACKSLASH RBRACKET .
+
+    STAR            reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    PLUS            reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    QUESTION        reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    LBRACE          reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    NON_META_CHAR   reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    DIGIT           reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    DASH            reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    COMMA           reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    DOT             reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    LPAREN          reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    BACKSLASH       reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    LDASHBRACKET    reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    LBRACKET        reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    DOLLAR          reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    BAR             reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    $end            reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+    RPAREN          reduce using rule 30 (factor -> BACKSLASH RBRACKET .)
+
+
+state 36
+
+    (31) factor -> BACKSLASH CARET .
+
+    STAR            reduce using rule 31 (factor -> BACKSLASH CARET .)
+    PLUS            reduce using rule 31 (factor -> BACKSLASH CARET .)
+    QUESTION        reduce using rule 31 (factor -> BACKSLASH CARET .)
+    LBRACE          reduce using rule 31 (factor -> BACKSLASH CARET .)
+    NON_META_CHAR   reduce using rule 31 (factor -> BACKSLASH CARET .)
+    DIGIT           reduce using rule 31 (factor -> BACKSLASH CARET .)
+    DASH            reduce using rule 31 (factor -> BACKSLASH CARET .)
+    COMMA           reduce using rule 31 (factor -> BACKSLASH CARET .)
+    DOT             reduce using rule 31 (factor -> BACKSLASH CARET .)
+    LPAREN          reduce using rule 31 (factor -> BACKSLASH CARET .)
+    BACKSLASH       reduce using rule 31 (factor -> BACKSLASH CARET .)
+    LDASHBRACKET    reduce using rule 31 (factor -> BACKSLASH CARET .)
+    LBRACKET        reduce using rule 31 (factor -> BACKSLASH CARET .)
+    DOLLAR          reduce using rule 31 (factor -> BACKSLASH CARET .)
+    BAR             reduce using rule 31 (factor -> BACKSLASH CARET .)
+    $end            reduce using rule 31 (factor -> BACKSLASH CARET .)
+    RPAREN          reduce using rule 31 (factor -> BACKSLASH CARET .)
+
+
+state 37
+
+    (32) factor -> BACKSLASH LBRACE .
+
+    STAR            reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    PLUS            reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    QUESTION        reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    LBRACE          reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    NON_META_CHAR   reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    DIGIT           reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    DASH            reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    COMMA           reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    DOT             reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    LPAREN          reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    BACKSLASH       reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    LDASHBRACKET    reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    LBRACKET        reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    DOLLAR          reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    BAR             reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    $end            reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+    RPAREN          reduce using rule 32 (factor -> BACKSLASH LBRACE .)
+
+
+state 38
+
+    (33) factor -> BACKSLASH RBRACE .
+
+    STAR            reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    PLUS            reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    QUESTION        reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    LBRACE          reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    NON_META_CHAR   reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    DIGIT           reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    DASH            reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    COMMA           reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    DOT             reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    LPAREN          reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    BACKSLASH       reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    LDASHBRACKET    reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    LBRACKET        reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    DOLLAR          reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    BAR             reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    $end            reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+    RPAREN          reduce using rule 33 (factor -> BACKSLASH RBRACE .)
+
+
+state 39
+
+    (34) factor -> BACKSLASH DASH .
+
+    STAR            reduce using rule 34 (factor -> BACKSLASH DASH .)
+    PLUS            reduce using rule 34 (factor -> BACKSLASH DASH .)
+    QUESTION        reduce using rule 34 (factor -> BACKSLASH DASH .)
+    LBRACE          reduce using rule 34 (factor -> BACKSLASH DASH .)
+    NON_META_CHAR   reduce using rule 34 (factor -> BACKSLASH DASH .)
+    DIGIT           reduce using rule 34 (factor -> BACKSLASH DASH .)
+    DASH            reduce using rule 34 (factor -> BACKSLASH DASH .)
+    COMMA           reduce using rule 34 (factor -> BACKSLASH DASH .)
+    DOT             reduce using rule 34 (factor -> BACKSLASH DASH .)
+    LPAREN          reduce using rule 34 (factor -> BACKSLASH DASH .)
+    BACKSLASH       reduce using rule 34 (factor -> BACKSLASH DASH .)
+    LDASHBRACKET    reduce using rule 34 (factor -> BACKSLASH DASH .)
+    LBRACKET        reduce using rule 34 (factor -> BACKSLASH DASH .)
+    DOLLAR          reduce using rule 34 (factor -> BACKSLASH DASH .)
+    BAR             reduce using rule 34 (factor -> BACKSLASH DASH .)
+    $end            reduce using rule 34 (factor -> BACKSLASH DASH .)
+    RPAREN          reduce using rule 34 (factor -> BACKSLASH DASH .)
+
+
+state 40
+
+    (35) factor -> BACKSLASH COMMA .
+
+    STAR            reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    PLUS            reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    QUESTION        reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    LBRACE          reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    NON_META_CHAR   reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    DIGIT           reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    DASH            reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    COMMA           reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    DOT             reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    LPAREN          reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    BACKSLASH       reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    LDASHBRACKET    reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    LBRACKET        reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    DOLLAR          reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    BAR             reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    $end            reduce using rule 35 (factor -> BACKSLASH COMMA .)
+    RPAREN          reduce using rule 35 (factor -> BACKSLASH COMMA .)
+
+
+state 41
+
+    (37) factor -> BACKSLASH NON_META_CHAR .
+
+    STAR            reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    PLUS            reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    QUESTION        reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    LBRACE          reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    NON_META_CHAR   reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    DIGIT           reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    DASH            reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    COMMA           reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    DOT             reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    LPAREN          reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    BACKSLASH       reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    LDASHBRACKET    reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    LBRACKET        reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    DOLLAR          reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    BAR             reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    $end            reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+    RPAREN          reduce using rule 37 (factor -> BACKSLASH NON_META_CHAR .)
+
+
+state 42
+
+    (58) set_non_meta_char -> LBRACKET .
+
+    DASH            reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    BACKSLASH       reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    NON_META_CHAR   reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    LBRACKET        reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    DIGIT           reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    DOT             reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    STAR            reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    PLUS            reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    QUESTION        reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    BAR             reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    LPAREN          reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    RPAREN          reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    LBRACE          reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    RBRACE          reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    COMMA           reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    EQUAL           reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    RDASHBRACKET    reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+    RBRACKET        reduce using rule 58 (set_non_meta_char -> LBRACKET .)
+
+
+state 43
+
+    (44) set -> LBRACKET set_items_parent . RDASHBRACKET
+    (45) set -> LBRACKET set_items_parent . RBRACKET
+
+    RDASHBRACKET    shift and go to state 68
+    RBRACKET        shift and go to state 69
+
+
+state 44
+
+    (47) set -> LBRACKET CARET . set_items_parent RBRACKET
+    (46) set_items_parent -> . set_items
+    (48) set_items -> . set_item
+    (49) set_items -> . set_item set_items
+    (50) set_item -> . set_non_meta_char
+    (51) set_item -> . set_non_meta_char DASH set_non_meta_char
+    (52) set_item -> . BACKSLASH RBRACKET
+    (53) set_item -> . BACKSLASH CARET
+    (54) set_item -> . BACKSLASH DASH
+    (55) set_item -> . BACKSLASH BACKSLASH
+    (56) set_item -> . BACKSLASH set_non_meta_char
+    (57) set_non_meta_char -> . NON_META_CHAR
+    (58) set_non_meta_char -> . LBRACKET
+    (59) set_non_meta_char -> . DIGIT
+    (60) set_non_meta_char -> . DOT
+    (61) set_non_meta_char -> . STAR
+    (62) set_non_meta_char -> . PLUS
+    (63) set_non_meta_char -> . QUESTION
+    (64) set_non_meta_char -> . BAR
+    (65) set_non_meta_char -> . LPAREN
+    (66) set_non_meta_char -> . RPAREN
+    (67) set_non_meta_char -> . LBRACE
+    (68) set_non_meta_char -> . RBRACE
+    (69) set_non_meta_char -> . COMMA
+    (70) set_non_meta_char -> . EQUAL
+
+    BACKSLASH       shift and go to state 48
+    NON_META_CHAR   shift and go to state 49
+    LBRACKET        shift and go to state 42
+    DIGIT           shift and go to state 50
+    DOT             shift and go to state 51
+    STAR            shift and go to state 52
+    PLUS            shift and go to state 53
+    QUESTION        shift and go to state 54
+    BAR             shift and go to state 55
+    LPAREN          shift and go to state 56
+    RPAREN          shift and go to state 57
+    LBRACE          shift and go to state 58
+    RBRACE          shift and go to state 59
+    COMMA           shift and go to state 60
+    EQUAL           shift and go to state 61
+
+    set_items_parent               shift and go to state 70
+    set_items                      shift and go to state 45
+    set_item                       shift and go to state 46
+    set_non_meta_char              shift and go to state 47
+
+state 45
+
+    (46) set_items_parent -> set_items .
+
+    RDASHBRACKET    reduce using rule 46 (set_items_parent -> set_items .)
+    RBRACKET        reduce using rule 46 (set_items_parent -> set_items .)
+
+
+state 46
+
+    (48) set_items -> set_item .
+    (49) set_items -> set_item . set_items
+    (48) set_items -> . set_item
+    (49) set_items -> . set_item set_items
+    (50) set_item -> . set_non_meta_char
+    (51) set_item -> . set_non_meta_char DASH set_non_meta_char
+    (52) set_item -> . BACKSLASH RBRACKET
+    (53) set_item -> . BACKSLASH CARET
+    (54) set_item -> . BACKSLASH DASH
+    (55) set_item -> . BACKSLASH BACKSLASH
+    (56) set_item -> . BACKSLASH set_non_meta_char
+    (57) set_non_meta_char -> . NON_META_CHAR
+    (58) set_non_meta_char -> . LBRACKET
+    (59) set_non_meta_char -> . DIGIT
+    (60) set_non_meta_char -> . DOT
+    (61) set_non_meta_char -> . STAR
+    (62) set_non_meta_char -> . PLUS
+    (63) set_non_meta_char -> . QUESTION
+    (64) set_non_meta_char -> . BAR
+    (65) set_non_meta_char -> . LPAREN
+    (66) set_non_meta_char -> . RPAREN
+    (67) set_non_meta_char -> . LBRACE
+    (68) set_non_meta_char -> . RBRACE
+    (69) set_non_meta_char -> . COMMA
+    (70) set_non_meta_char -> . EQUAL
+
+    RDASHBRACKET    reduce using rule 48 (set_items -> set_item .)
+    RBRACKET        reduce using rule 48 (set_items -> set_item .)
+    BACKSLASH       shift and go to state 48
+    NON_META_CHAR   shift and go to state 49
+    LBRACKET        shift and go to state 42
+    DIGIT           shift and go to state 50
+    DOT             shift and go to state 51
+    STAR            shift and go to state 52
+    PLUS            shift and go to state 53
+    QUESTION        shift and go to state 54
+    BAR             shift and go to state 55
+    LPAREN          shift and go to state 56
+    RPAREN          shift and go to state 57
+    LBRACE          shift and go to state 58
+    RBRACE          shift and go to state 59
+    COMMA           shift and go to state 60
+    EQUAL           shift and go to state 61
+
+    set_item                       shift and go to state 46
+    set_items                      shift and go to state 71
+    set_non_meta_char              shift and go to state 47
+
+state 47
+
+    (50) set_item -> set_non_meta_char .
+    (51) set_item -> set_non_meta_char . DASH set_non_meta_char
+
+    BACKSLASH       reduce using rule 50 (set_item -> set_non_meta_char .)
+    NON_META_CHAR   reduce using rule 50 (set_item -> set_non_meta_char .)
+    LBRACKET        reduce using rule 50 (set_item -> set_non_meta_char .)
+    DIGIT           reduce using rule 50 (set_item -> set_non_meta_char .)
+    DOT             reduce using rule 50 (set_item -> set_non_meta_char .)
+    STAR            reduce using rule 50 (set_item -> set_non_meta_char .)
+    PLUS            reduce using rule 50 (set_item -> set_non_meta_char .)
+    QUESTION        reduce using rule 50 (set_item -> set_non_meta_char .)
+    BAR             reduce using rule 50 (set_item -> set_non_meta_char .)
+    LPAREN          reduce using rule 50 (set_item -> set_non_meta_char .)
+    RPAREN          reduce using rule 50 (set_item -> set_non_meta_char .)
+    LBRACE          reduce using rule 50 (set_item -> set_non_meta_char .)
+    RBRACE          reduce using rule 50 (set_item -> set_non_meta_char .)
+    COMMA           reduce using rule 50 (set_item -> set_non_meta_char .)
+    EQUAL           reduce using rule 50 (set_item -> set_non_meta_char .)
+    RDASHBRACKET    reduce using rule 50 (set_item -> set_non_meta_char .)
+    RBRACKET        reduce using rule 50 (set_item -> set_non_meta_char .)
+    DASH            shift and go to state 72
+
+
+state 48
+
+    (52) set_item -> BACKSLASH . RBRACKET
+    (53) set_item -> BACKSLASH . CARET
+    (54) set_item -> BACKSLASH . DASH
+    (55) set_item -> BACKSLASH . BACKSLASH
+    (56) set_item -> BACKSLASH . set_non_meta_char
+    (57) set_non_meta_char -> . NON_META_CHAR
+    (58) set_non_meta_char -> . LBRACKET
+    (59) set_non_meta_char -> . DIGIT
+    (60) set_non_meta_char -> . DOT
+    (61) set_non_meta_char -> . STAR
+    (62) set_non_meta_char -> . PLUS
+    (63) set_non_meta_char -> . QUESTION
+    (64) set_non_meta_char -> . BAR
+    (65) set_non_meta_char -> . LPAREN
+    (66) set_non_meta_char -> . RPAREN
+    (67) set_non_meta_char -> . LBRACE
+    (68) set_non_meta_char -> . RBRACE
+    (69) set_non_meta_char -> . COMMA
+    (70) set_non_meta_char -> . EQUAL
+
+    RBRACKET        shift and go to state 74
+    CARET           shift and go to state 75
+    DASH            shift and go to state 76
+    BACKSLASH       shift and go to state 73
+    NON_META_CHAR   shift and go to state 49
+    LBRACKET        shift and go to state 42
+    DIGIT           shift and go to state 50
+    DOT             shift and go to state 51
+    STAR            shift and go to state 52
+    PLUS            shift and go to state 53
+    QUESTION        shift and go to state 54
+    BAR             shift and go to state 55
+    LPAREN          shift and go to state 56
+    RPAREN          shift and go to state 57
+    LBRACE          shift and go to state 58
+    RBRACE          shift and go to state 59
+    COMMA           shift and go to state 60
+    EQUAL           shift and go to state 61
+
+    set_non_meta_char              shift and go to state 77
+
+state 49
+
+    (57) set_non_meta_char -> NON_META_CHAR .
+
+    DASH            reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    BACKSLASH       reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    NON_META_CHAR   reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    LBRACKET        reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    DIGIT           reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    DOT             reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    STAR            reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    PLUS            reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    QUESTION        reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    BAR             reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    LPAREN          reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    RPAREN          reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    LBRACE          reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    RBRACE          reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    COMMA           reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    EQUAL           reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    RDASHBRACKET    reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+    RBRACKET        reduce using rule 57 (set_non_meta_char -> NON_META_CHAR .)
+
+
+state 50
+
+    (59) set_non_meta_char -> DIGIT .
+
+    DASH            reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    BACKSLASH       reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    NON_META_CHAR   reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    LBRACKET        reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    DIGIT           reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    DOT             reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    STAR            reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    PLUS            reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    QUESTION        reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    BAR             reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    LPAREN          reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    RPAREN          reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    LBRACE          reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    RBRACE          reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    COMMA           reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    EQUAL           reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    RDASHBRACKET    reduce using rule 59 (set_non_meta_char -> DIGIT .)
+    RBRACKET        reduce using rule 59 (set_non_meta_char -> DIGIT .)
+
+
+state 51
+
+    (60) set_non_meta_char -> DOT .
+
+    DASH            reduce using rule 60 (set_non_meta_char -> DOT .)
+    BACKSLASH       reduce using rule 60 (set_non_meta_char -> DOT .)
+    NON_META_CHAR   reduce using rule 60 (set_non_meta_char -> DOT .)
+    LBRACKET        reduce using rule 60 (set_non_meta_char -> DOT .)
+    DIGIT           reduce using rule 60 (set_non_meta_char -> DOT .)
+    DOT             reduce using rule 60 (set_non_meta_char -> DOT .)
+    STAR            reduce using rule 60 (set_non_meta_char -> DOT .)
+    PLUS            reduce using rule 60 (set_non_meta_char -> DOT .)
+    QUESTION        reduce using rule 60 (set_non_meta_char -> DOT .)
+    BAR             reduce using rule 60 (set_non_meta_char -> DOT .)
+    LPAREN          reduce using rule 60 (set_non_meta_char -> DOT .)
+    RPAREN          reduce using rule 60 (set_non_meta_char -> DOT .)
+    LBRACE          reduce using rule 60 (set_non_meta_char -> DOT .)
+    RBRACE          reduce using rule 60 (set_non_meta_char -> DOT .)
+    COMMA           reduce using rule 60 (set_non_meta_char -> DOT .)
+    EQUAL           reduce using rule 60 (set_non_meta_char -> DOT .)
+    RDASHBRACKET    reduce using rule 60 (set_non_meta_char -> DOT .)
+    RBRACKET        reduce using rule 60 (set_non_meta_char -> DOT .)
+
+
+state 52
+
+    (61) set_non_meta_char -> STAR .
+
+    DASH            reduce using rule 61 (set_non_meta_char -> STAR .)
+    BACKSLASH       reduce using rule 61 (set_non_meta_char -> STAR .)
+    NON_META_CHAR   reduce using rule 61 (set_non_meta_char -> STAR .)
+    LBRACKET        reduce using rule 61 (set_non_meta_char -> STAR .)
+    DIGIT           reduce using rule 61 (set_non_meta_char -> STAR .)
+    DOT             reduce using rule 61 (set_non_meta_char -> STAR .)
+    STAR            reduce using rule 61 (set_non_meta_char -> STAR .)
+    PLUS            reduce using rule 61 (set_non_meta_char -> STAR .)
+    QUESTION        reduce using rule 61 (set_non_meta_char -> STAR .)
+    BAR             reduce using rule 61 (set_non_meta_char -> STAR .)
+    LPAREN          reduce using rule 61 (set_non_meta_char -> STAR .)
+    RPAREN          reduce using rule 61 (set_non_meta_char -> STAR .)
+    LBRACE          reduce using rule 61 (set_non_meta_char -> STAR .)
+    RBRACE          reduce using rule 61 (set_non_meta_char -> STAR .)
+    COMMA           reduce using rule 61 (set_non_meta_char -> STAR .)
+    EQUAL           reduce using rule 61 (set_non_meta_char -> STAR .)
+    RDASHBRACKET    reduce using rule 61 (set_non_meta_char -> STAR .)
+    RBRACKET        reduce using rule 61 (set_non_meta_char -> STAR .)
+
+
+state 53
+
+    (62) set_non_meta_char -> PLUS .
+
+    DASH            reduce using rule 62 (set_non_meta_char -> PLUS .)
+    BACKSLASH       reduce using rule 62 (set_non_meta_char -> PLUS .)
+    NON_META_CHAR   reduce using rule 62 (set_non_meta_char -> PLUS .)
+    LBRACKET        reduce using rule 62 (set_non_meta_char -> PLUS .)
+    DIGIT           reduce using rule 62 (set_non_meta_char -> PLUS .)
+    DOT             reduce using rule 62 (set_non_meta_char -> PLUS .)
+    STAR            reduce using rule 62 (set_non_meta_char -> PLUS .)
+    PLUS            reduce using rule 62 (set_non_meta_char -> PLUS .)
+    QUESTION        reduce using rule 62 (set_non_meta_char -> PLUS .)
+    BAR             reduce using rule 62 (set_non_meta_char -> PLUS .)
+    LPAREN          reduce using rule 62 (set_non_meta_char -> PLUS .)
+    RPAREN          reduce using rule 62 (set_non_meta_char -> PLUS .)
+    LBRACE          reduce using rule 62 (set_non_meta_char -> PLUS .)
+    RBRACE          reduce using rule 62 (set_non_meta_char -> PLUS .)
+    COMMA           reduce using rule 62 (set_non_meta_char -> PLUS .)
+    EQUAL           reduce using rule 62 (set_non_meta_char -> PLUS .)
+    RDASHBRACKET    reduce using rule 62 (set_non_meta_char -> PLUS .)
+    RBRACKET        reduce using rule 62 (set_non_meta_char -> PLUS .)
+
+
+state 54
+
+    (63) set_non_meta_char -> QUESTION .
+
+    DASH            reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    BACKSLASH       reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    NON_META_CHAR   reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    LBRACKET        reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    DIGIT           reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    DOT             reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    STAR            reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    PLUS            reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    QUESTION        reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    BAR             reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    LPAREN          reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    RPAREN          reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    LBRACE          reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    RBRACE          reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    COMMA           reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    EQUAL           reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    RDASHBRACKET    reduce using rule 63 (set_non_meta_char -> QUESTION .)
+    RBRACKET        reduce using rule 63 (set_non_meta_char -> QUESTION .)
+
+
+state 55
+
+    (64) set_non_meta_char -> BAR .
+
+    DASH            reduce using rule 64 (set_non_meta_char -> BAR .)
+    BACKSLASH       reduce using rule 64 (set_non_meta_char -> BAR .)
+    NON_META_CHAR   reduce using rule 64 (set_non_meta_char -> BAR .)
+    LBRACKET        reduce using rule 64 (set_non_meta_char -> BAR .)
+    DIGIT           reduce using rule 64 (set_non_meta_char -> BAR .)
+    DOT             reduce using rule 64 (set_non_meta_char -> BAR .)
+    STAR            reduce using rule 64 (set_non_meta_char -> BAR .)
+    PLUS            reduce using rule 64 (set_non_meta_char -> BAR .)
+    QUESTION        reduce using rule 64 (set_non_meta_char -> BAR .)
+    BAR             reduce using rule 64 (set_non_meta_char -> BAR .)
+    LPAREN          reduce using rule 64 (set_non_meta_char -> BAR .)
+    RPAREN          reduce using rule 64 (set_non_meta_char -> BAR .)
+    LBRACE          reduce using rule 64 (set_non_meta_char -> BAR .)
+    RBRACE          reduce using rule 64 (set_non_meta_char -> BAR .)
+    COMMA           reduce using rule 64 (set_non_meta_char -> BAR .)
+    EQUAL           reduce using rule 64 (set_non_meta_char -> BAR .)
+    RDASHBRACKET    reduce using rule 64 (set_non_meta_char -> BAR .)
+    RBRACKET        reduce using rule 64 (set_non_meta_char -> BAR .)
+
+
+state 56
+
+    (65) set_non_meta_char -> LPAREN .
+
+    DASH            reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    BACKSLASH       reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    NON_META_CHAR   reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    LBRACKET        reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    DIGIT           reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    DOT             reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    STAR            reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    PLUS            reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    QUESTION        reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    BAR             reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    LPAREN          reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    RPAREN          reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    LBRACE          reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    RBRACE          reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    COMMA           reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    EQUAL           reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    RDASHBRACKET    reduce using rule 65 (set_non_meta_char -> LPAREN .)
+    RBRACKET        reduce using rule 65 (set_non_meta_char -> LPAREN .)
+
+
+state 57
+
+    (66) set_non_meta_char -> RPAREN .
+
+    DASH            reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    BACKSLASH       reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    NON_META_CHAR   reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    LBRACKET        reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    DIGIT           reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    DOT             reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    STAR            reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    PLUS            reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    QUESTION        reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    BAR             reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    LPAREN          reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    RPAREN          reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    LBRACE          reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    RBRACE          reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    COMMA           reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    EQUAL           reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    RDASHBRACKET    reduce using rule 66 (set_non_meta_char -> RPAREN .)
+    RBRACKET        reduce using rule 66 (set_non_meta_char -> RPAREN .)
+
+
+state 58
+
+    (67) set_non_meta_char -> LBRACE .
+
+    DASH            reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    BACKSLASH       reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    NON_META_CHAR   reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    LBRACKET        reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    DIGIT           reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    DOT             reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    STAR            reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    PLUS            reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    QUESTION        reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    BAR             reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    LPAREN          reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    RPAREN          reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    LBRACE          reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    RBRACE          reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    COMMA           reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    EQUAL           reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    RDASHBRACKET    reduce using rule 67 (set_non_meta_char -> LBRACE .)
+    RBRACKET        reduce using rule 67 (set_non_meta_char -> LBRACE .)
+
+
+state 59
+
+    (68) set_non_meta_char -> RBRACE .
+
+    DASH            reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    BACKSLASH       reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    NON_META_CHAR   reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    LBRACKET        reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    DIGIT           reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    DOT             reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    STAR            reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    PLUS            reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    QUESTION        reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    BAR             reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    LPAREN          reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    RPAREN          reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    LBRACE          reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    RBRACE          reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    COMMA           reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    EQUAL           reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    RDASHBRACKET    reduce using rule 68 (set_non_meta_char -> RBRACE .)
+    RBRACKET        reduce using rule 68 (set_non_meta_char -> RBRACE .)
+
+
+state 60
+
+    (69) set_non_meta_char -> COMMA .
+
+    DASH            reduce using rule 69 (set_non_meta_char -> COMMA .)
+    BACKSLASH       reduce using rule 69 (set_non_meta_char -> COMMA .)
+    NON_META_CHAR   reduce using rule 69 (set_non_meta_char -> COMMA .)
+    LBRACKET        reduce using rule 69 (set_non_meta_char -> COMMA .)
+    DIGIT           reduce using rule 69 (set_non_meta_char -> COMMA .)
+    DOT             reduce using rule 69 (set_non_meta_char -> COMMA .)
+    STAR            reduce using rule 69 (set_non_meta_char -> COMMA .)
+    PLUS            reduce using rule 69 (set_non_meta_char -> COMMA .)
+    QUESTION        reduce using rule 69 (set_non_meta_char -> COMMA .)
+    BAR             reduce using rule 69 (set_non_meta_char -> COMMA .)
+    LPAREN          reduce using rule 69 (set_non_meta_char -> COMMA .)
+    RPAREN          reduce using rule 69 (set_non_meta_char -> COMMA .)
+    LBRACE          reduce using rule 69 (set_non_meta_char -> COMMA .)
+    RBRACE          reduce using rule 69 (set_non_meta_char -> COMMA .)
+    COMMA           reduce using rule 69 (set_non_meta_char -> COMMA .)
+    EQUAL           reduce using rule 69 (set_non_meta_char -> COMMA .)
+    RDASHBRACKET    reduce using rule 69 (set_non_meta_char -> COMMA .)
+    RBRACKET        reduce using rule 69 (set_non_meta_char -> COMMA .)
+
+
+state 61
+
+    (70) set_non_meta_char -> EQUAL .
+
+    DASH            reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    BACKSLASH       reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    NON_META_CHAR   reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    LBRACKET        reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    DIGIT           reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    DOT             reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    STAR            reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    PLUS            reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    QUESTION        reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    BAR             reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    LPAREN          reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    RPAREN          reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    LBRACE          reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    RBRACE          reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    COMMA           reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    EQUAL           reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    RDASHBRACKET    reduce using rule 70 (set_non_meta_char -> EQUAL .)
+    RBRACKET        reduce using rule 70 (set_non_meta_char -> EQUAL .)
+
+
+state 62
+
+    (43) set -> LDASHBRACKET set_items_parent . RBRACKET
+
+    RBRACKET        shift and go to state 78
+
+
+state 63
+
+    (2) regex -> outer_term BAR regex .
+
+    $end            reduce using rule 2 (regex -> outer_term BAR regex .)
+    RPAREN          reduce using rule 2 (regex -> outer_term BAR regex .)
+
+
+state 64
+
+    (6) outer_term -> CARET term DOLLAR .
+
+    BAR             reduce using rule 6 (outer_term -> CARET term DOLLAR .)
+    $end            reduce using rule 6 (outer_term -> CARET term DOLLAR .)
+    RPAREN          reduce using rule 6 (outer_term -> CARET term DOLLAR .)
+
+
+state 65
+
+    (38) factor -> factor LBRACE number . RBRACE
+    (39) factor -> factor LBRACE number . COMMA RBRACE
+    (40) factor -> factor LBRACE number . COMMA number RBRACE
+
+    RBRACE          shift and go to state 79
+    COMMA           shift and go to state 80
+
+
+state 66
+
+    (41) number -> DIGIT .
+    (42) number -> DIGIT . number
+    (41) number -> . DIGIT
+    (42) number -> . DIGIT number
+
+    RBRACE          reduce using rule 41 (number -> DIGIT .)
+    COMMA           reduce using rule 41 (number -> DIGIT .)
+    DIGIT           shift and go to state 66
+
+    number                         shift and go to state 81
+
+state 67
+
+    (17) factor -> LPAREN regex RPAREN .
+
+    STAR            reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    PLUS            reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    QUESTION        reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    LBRACE          reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    NON_META_CHAR   reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    DIGIT           reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    DASH            reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    COMMA           reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    DOT             reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    LPAREN          reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    BACKSLASH       reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    LDASHBRACKET    reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    LBRACKET        reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    DOLLAR          reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    BAR             reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    $end            reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+    RPAREN          reduce using rule 17 (factor -> LPAREN regex RPAREN .)
+
+
+state 68
+
+    (44) set -> LBRACKET set_items_parent RDASHBRACKET .
+
+    STAR            reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    PLUS            reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    QUESTION        reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    LBRACE          reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    NON_META_CHAR   reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    DIGIT           reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    DASH            reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    COMMA           reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    DOT             reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    LPAREN          reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    BACKSLASH       reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    LDASHBRACKET    reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    LBRACKET        reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    DOLLAR          reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    BAR             reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    $end            reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+    RPAREN          reduce using rule 44 (set -> LBRACKET set_items_parent RDASHBRACKET .)
+
+
+state 69
+
+    (45) set -> LBRACKET set_items_parent RBRACKET .
+
+    STAR            reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    PLUS            reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    QUESTION        reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    LBRACE          reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    NON_META_CHAR   reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    DIGIT           reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    DASH            reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    COMMA           reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    DOT             reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    LPAREN          reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    BACKSLASH       reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    LDASHBRACKET    reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    LBRACKET        reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    DOLLAR          reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    BAR             reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    $end            reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+    RPAREN          reduce using rule 45 (set -> LBRACKET set_items_parent RBRACKET .)
+
+
+state 70
+
+    (47) set -> LBRACKET CARET set_items_parent . RBRACKET
+
+    RBRACKET        shift and go to state 82
+
+
+state 71
+
+    (49) set_items -> set_item set_items .
+
+    RDASHBRACKET    reduce using rule 49 (set_items -> set_item set_items .)
+    RBRACKET        reduce using rule 49 (set_items -> set_item set_items .)
+
+
+state 72
+
+    (51) set_item -> set_non_meta_char DASH . set_non_meta_char
+    (57) set_non_meta_char -> . NON_META_CHAR
+    (58) set_non_meta_char -> . LBRACKET
+    (59) set_non_meta_char -> . DIGIT
+    (60) set_non_meta_char -> . DOT
+    (61) set_non_meta_char -> . STAR
+    (62) set_non_meta_char -> . PLUS
+    (63) set_non_meta_char -> . QUESTION
+    (64) set_non_meta_char -> . BAR
+    (65) set_non_meta_char -> . LPAREN
+    (66) set_non_meta_char -> . RPAREN
+    (67) set_non_meta_char -> . LBRACE
+    (68) set_non_meta_char -> . RBRACE
+    (69) set_non_meta_char -> . COMMA
+    (70) set_non_meta_char -> . EQUAL
+
+    NON_META_CHAR   shift and go to state 49
+    LBRACKET        shift and go to state 42
+    DIGIT           shift and go to state 50
+    DOT             shift and go to state 51
+    STAR            shift and go to state 52
+    PLUS            shift and go to state 53
+    QUESTION        shift and go to state 54
+    BAR             shift and go to state 55
+    LPAREN          shift and go to state 56
+    RPAREN          shift and go to state 57
+    LBRACE          shift and go to state 58
+    RBRACE          shift and go to state 59
+    COMMA           shift and go to state 60
+    EQUAL           shift and go to state 61
+
+    set_non_meta_char              shift and go to state 83
+
+state 73
+
+    (55) set_item -> BACKSLASH BACKSLASH .
+
+    BACKSLASH       reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    NON_META_CHAR   reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    LBRACKET        reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    DIGIT           reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    DOT             reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    STAR            reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    PLUS            reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    QUESTION        reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    BAR             reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    LPAREN          reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    RPAREN          reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    LBRACE          reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    RBRACE          reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    COMMA           reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    EQUAL           reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    RDASHBRACKET    reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+    RBRACKET        reduce using rule 55 (set_item -> BACKSLASH BACKSLASH .)
+
+
+state 74
+
+    (52) set_item -> BACKSLASH RBRACKET .
+
+    BACKSLASH       reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    NON_META_CHAR   reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    LBRACKET        reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    DIGIT           reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    DOT             reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    STAR            reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    PLUS            reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    QUESTION        reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    BAR             reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    LPAREN          reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    RPAREN          reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    LBRACE          reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    RBRACE          reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    COMMA           reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    EQUAL           reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    RDASHBRACKET    reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+    RBRACKET        reduce using rule 52 (set_item -> BACKSLASH RBRACKET .)
+
+
+state 75
+
+    (53) set_item -> BACKSLASH CARET .
+
+    BACKSLASH       reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    NON_META_CHAR   reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    LBRACKET        reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    DIGIT           reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    DOT             reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    STAR            reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    PLUS            reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    QUESTION        reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    BAR             reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    LPAREN          reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    RPAREN          reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    LBRACE          reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    RBRACE          reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    COMMA           reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    EQUAL           reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    RDASHBRACKET    reduce using rule 53 (set_item -> BACKSLASH CARET .)
+    RBRACKET        reduce using rule 53 (set_item -> BACKSLASH CARET .)
+
+
+state 76
+
+    (54) set_item -> BACKSLASH DASH .
+
+    BACKSLASH       reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    NON_META_CHAR   reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    LBRACKET        reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    DIGIT           reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    DOT             reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    STAR            reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    PLUS            reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    QUESTION        reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    BAR             reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    LPAREN          reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    RPAREN          reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    LBRACE          reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    RBRACE          reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    COMMA           reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    EQUAL           reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    RDASHBRACKET    reduce using rule 54 (set_item -> BACKSLASH DASH .)
+    RBRACKET        reduce using rule 54 (set_item -> BACKSLASH DASH .)
+
+
+state 77
+
+    (56) set_item -> BACKSLASH set_non_meta_char .
+
+    BACKSLASH       reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    NON_META_CHAR   reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    LBRACKET        reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    DIGIT           reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    DOT             reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    STAR            reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    PLUS            reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    QUESTION        reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    BAR             reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    LPAREN          reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    RPAREN          reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    LBRACE          reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    RBRACE          reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    COMMA           reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    EQUAL           reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    RDASHBRACKET    reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+    RBRACKET        reduce using rule 56 (set_item -> BACKSLASH set_non_meta_char .)
+
+
+state 78
+
+    (43) set -> LDASHBRACKET set_items_parent RBRACKET .
+
+    STAR            reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    PLUS            reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    QUESTION        reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    LBRACE          reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    NON_META_CHAR   reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    DIGIT           reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    DASH            reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    COMMA           reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    DOT             reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    LPAREN          reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    BACKSLASH       reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    LDASHBRACKET    reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    LBRACKET        reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    DOLLAR          reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    BAR             reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    $end            reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+    RPAREN          reduce using rule 43 (set -> LDASHBRACKET set_items_parent RBRACKET .)
+
+
+state 79
+
+    (38) factor -> factor LBRACE number RBRACE .
+
+    STAR            reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    PLUS            reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    QUESTION        reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    LBRACE          reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    NON_META_CHAR   reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    DIGIT           reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    DASH            reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    COMMA           reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    DOT             reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    LPAREN          reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    BACKSLASH       reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    LDASHBRACKET    reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    LBRACKET        reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    DOLLAR          reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    BAR             reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    $end            reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+    RPAREN          reduce using rule 38 (factor -> factor LBRACE number RBRACE .)
+
+
+state 80
+
+    (39) factor -> factor LBRACE number COMMA . RBRACE
+    (40) factor -> factor LBRACE number COMMA . number RBRACE
+    (41) number -> . DIGIT
+    (42) number -> . DIGIT number
+
+    RBRACE          shift and go to state 85
+    DIGIT           shift and go to state 66
+
+    number                         shift and go to state 84
+
+state 81
+
+    (42) number -> DIGIT number .
+
+    RBRACE          reduce using rule 42 (number -> DIGIT number .)
+    COMMA           reduce using rule 42 (number -> DIGIT number .)
+
+
+state 82
+
+    (47) set -> LBRACKET CARET set_items_parent RBRACKET .
+
+    STAR            reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    PLUS            reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    QUESTION        reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    LBRACE          reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    NON_META_CHAR   reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    DIGIT           reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    DASH            reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    COMMA           reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    DOT             reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    LPAREN          reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    BACKSLASH       reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    LDASHBRACKET    reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    LBRACKET        reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    DOLLAR          reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    BAR             reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    $end            reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+    RPAREN          reduce using rule 47 (set -> LBRACKET CARET set_items_parent RBRACKET .)
+
+
+state 83
+
+    (51) set_item -> set_non_meta_char DASH set_non_meta_char .
+
+    BACKSLASH       reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    NON_META_CHAR   reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    LBRACKET        reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    DIGIT           reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    DOT             reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    STAR            reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    PLUS            reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    QUESTION        reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    BAR             reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    LPAREN          reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    RPAREN          reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    LBRACE          reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    RBRACE          reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    COMMA           reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    EQUAL           reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    RDASHBRACKET    reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+    RBRACKET        reduce using rule 51 (set_item -> set_non_meta_char DASH set_non_meta_char .)
+
+
+state 84
+
+    (40) factor -> factor LBRACE number COMMA number . RBRACE
+
+    RBRACE          shift and go to state 86
+
+
+state 85
+
+    (39) factor -> factor LBRACE number COMMA RBRACE .
+
+    STAR            reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    PLUS            reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    QUESTION        reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    LBRACE          reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    NON_META_CHAR   reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    DIGIT           reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    DASH            reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    COMMA           reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    DOT             reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    LPAREN          reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    BACKSLASH       reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    LDASHBRACKET    reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    LBRACKET        reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    DOLLAR          reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    BAR             reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    $end            reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+    RPAREN          reduce using rule 39 (factor -> factor LBRACE number COMMA RBRACE .)
+
+
+state 86
+
+    (40) factor -> factor LBRACE number COMMA number RBRACE .
+
+    STAR            reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    PLUS            reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    QUESTION        reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    LBRACE          reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    NON_META_CHAR   reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    DIGIT           reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    DASH            reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    COMMA           reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    DOT             reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    LPAREN          reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    BACKSLASH       reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    LDASHBRACKET    reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    LBRACKET        reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    DOLLAR          reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    BAR             reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    $end            reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+    RPAREN          reduce using rule 40 (factor -> factor LBRACE number COMMA number RBRACE .)
+

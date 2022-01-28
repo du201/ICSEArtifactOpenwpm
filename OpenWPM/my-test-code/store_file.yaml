@@ -1,0 +1,25 @@
+info:
+  title: The number 1 form in this url
+  version: 1.0.0
+openapi: 3.0.0
+paths:
+  /:
+    post:
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                name:
+                  pattern: "[a-z]{4,8}"
+                  type: string
+                pass:
+                  type: string
+              required:
+                - name
+                - pass
+              type: object
+        required: true
+      summary: a form post request generated from OpenWPM
+servers:
+  - url: http://localhost:3000

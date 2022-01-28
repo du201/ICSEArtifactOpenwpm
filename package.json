@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "axios": "^0.21.1",
+    "download": "^8.0.0",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.5"
+  }
+}

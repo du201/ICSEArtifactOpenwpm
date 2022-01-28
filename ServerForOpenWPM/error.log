@@ -1,0 +1,1 @@
+ValidationError: used_string: Cast to string failed for value "{ direction: 'from-page-script', message: 'about-to-button-click' }" (type Object) at path "used_string"ValidationError: used_string: Cast to string failed for value "{ direction: 'from-page-script', message: 'about-to-button-click' }" (type Object) at path "used_string"
