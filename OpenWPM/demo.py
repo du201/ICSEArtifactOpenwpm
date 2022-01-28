@@ -11,7 +11,7 @@ import sys
 import json
 import datetime
 
-f = open('OpenWPMListInput.json',) 
+f = open('../../OpenWPMListInput.json',) 
 
 START = 0
 FINISH = 10000

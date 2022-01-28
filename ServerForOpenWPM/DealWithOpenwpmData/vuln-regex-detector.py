@@ -37,7 +37,7 @@ def AnalyzeRegex(regex):
     return report
 
 
-POSIX = '_test3'
+POSIX = '_test4'
 
 client = MongoClient("mongodb+srv://xin:20000114@cluster0.zvpso.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
                  
