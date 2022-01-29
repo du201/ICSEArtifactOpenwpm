@@ -37,9 +37,9 @@ def AnalyzeRegex(regex):
     return report
 
 
-POSIX = '_test4'
+POSIX = os.environ['MONGODB_COLLECTION_POSIX']
 
-client = MongoClient("mongodb+srv://xin:20000114@cluster0.zvpso.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+client = MongoClient(os.environ['MONGODB_CONNECT_STRING'])
                  
 analyze_triggered_funcs = client['regex'][f'analyze_triggered_func{POSIX}']
 docs = analyze_triggered_funcs.find({})

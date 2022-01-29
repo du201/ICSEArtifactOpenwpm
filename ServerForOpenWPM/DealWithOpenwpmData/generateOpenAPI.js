@@ -142,8 +142,12 @@ function generateOpenAPI(vulnRegexObj, onSubmitObj, isPattern) {
                 }
             };
         }
+        
+        if (!fs.existsSync(`${process.env.API_DIR}`)) {
+        	fs.mkdirSync(`${process.env.API_DIR}`);
+        }
 
-        fs.writeFileSync(`${process.env.HOME}/${process.env.API_DIR}/openAPI_${isPattern ? 'pattern' : 'regex'}_${openAPINum}.yaml`, yaml.dump(openAPIOutput, {
+        fs.writeFileSync(`${process.env.API_DIR}/openAPI_${isPattern ? 'pattern' : 'regex'}_${openAPINum}.yaml`, yaml.dump(openAPIOutput, {
             'styles': {
                 '!!null': 'canonical'
             },

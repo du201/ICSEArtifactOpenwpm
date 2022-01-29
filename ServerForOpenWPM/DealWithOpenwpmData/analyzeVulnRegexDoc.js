@@ -23,10 +23,11 @@ async function store() {
     let uniqueVulnPatternSet = new Set();
     let uniqueUrlSet = new Set();
     let pairsOfOnSubmitAndVulnPattern = [];
-
     for (let vulnPatternObj of vulnPatternObjs) {
+
         uniqueVulnPatternSet.add(vulnPatternObj.regex)
         for (let onSubmitDoc of onSubmitDocs) {
+
             if (onSubmitDoc.page_url == vulnPatternObj.page_url && onSubmitDoc.ith_form == vulnPatternObj.ith_form) {
                 let onSubmitObj = onSubmitDoc.toObject()
                 uniqueUrlSet.add(onSubmitDoc.page_url);
