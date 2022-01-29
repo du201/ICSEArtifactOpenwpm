@@ -40,5 +40,6 @@ async function store() {
     await pattern_attribute.deleteMany({});
     await log_track.deleteMany({});
 
+	await mongoose.disconnect();
     console.log('done');
 }
